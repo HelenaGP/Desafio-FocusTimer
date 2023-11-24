@@ -36,24 +36,17 @@ export function decreaseFive() {
 }
 
 export function setSoundTree() {
-  if(state.isMute){
-    state.isMute=false
-    sounds.playTrack(sounds.bgTree)
-    return
-  } 
-  sounds.mute()
-  state.isMute=true
+  sounds.playTrack(sounds.bgTree)
 }
 
 export function setSoundRain() {
-  if(state.isMute){
-    state.isMute=false
-    sounds.playTrack(sounds.bgRain)
-    return
-  } 
-  sounds.mute()
-  state.isMute=true
+  sounds.playTrack(sounds.bgRain)
 }
 
+export function setSoundFire() {
+  sounds.playTrack(sounds.bgFire)
+}
 
-
+export function setSoundCoffee() {
+  sounds.playTrack(sounds.bgCoffee)
+}

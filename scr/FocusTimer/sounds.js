@@ -21,11 +21,20 @@ export function mute() {
 }
 
 export function playTrack(sound) {
-  if(state.isMute){
+  if(state.isMute) {
+    state.currentSound = sound
+    state.isMute=false
     sound.play()
+    return
   }
-  else {
-    mute()
-    sound.play()
+  if(state.currentSound != sound) {
+    state.currentSound.pause()
   }
+  else{
+    sound.pause()
+    state.isMute=true
+    return
+  }
+  sound.play()
+  state.currentSound = sound
 }
